@@ -29,3 +29,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Live view at:
 
 https://maratib.github.io/the-angular-masonry-gird/
+
+https://maratib.github.io/the-angular-masonry-gird/
