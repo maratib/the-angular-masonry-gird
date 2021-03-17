@@ -17,13 +17,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MasonryGridComponent } from './inspiration/masonry-grid/masonry-grid.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MasonryGridComponent
+    MasonryGridComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
