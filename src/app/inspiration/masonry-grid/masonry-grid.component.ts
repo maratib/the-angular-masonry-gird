@@ -1,6 +1,7 @@
 import { GridItem } from './../interfaces';
 import { FetchService } from './../fetch.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgxMasonryComponent } from 'ngx-masonry';
 
 @Component({
   selector: 'app-masonry-grid',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./masonry-grid.component.less'],
 })
 export class MasonryGridComponent implements OnInit {
+  @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
   // masonryItems: any[] = [];
   gridItems = [] as any;
 
@@ -22,5 +24,10 @@ export class MasonryGridComponent implements OnInit {
 
   ngOnInit(): void {
     this.gridItems = this.fetch.getImages();
+  }
+
+  refreshLayout(event: any) {
+    this.masonry.reloadItems();
+    this.masonry.layout();
   }
 }

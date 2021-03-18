@@ -1,6 +1,6 @@
 <h1>Masnory Grid Layout</h1>
-<ngx-masonry>
+<ngx-masonry (layoutComplete)="refreshLayout($event)">
   <div ngxMasonryItem class="masonry-item" *ngFor="let item of gridItems">
-    <img masonryLazy loading="lazy" [src]="item.img" class="" />
+    <img masonryLazy loading="lazy" [src]="item.img" />
   </div>
 </ngx-masonry>

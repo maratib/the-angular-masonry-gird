@@ -33,10 +33,11 @@ export class FetchService {
 
   private loadImages(cat: Base[]) {
     cat.forEach((element: Base) => {
-      this.allImages.push({
-        img:
-          'https://imageserver.homes.co.nz/fill/300/200/' + element.images[0],
-      });
+      const img =
+        'https://imageserver.homes.co.nz/scale/350/0/' + element.images[0];
+      console.log(img);
+
+      this.allImages.push({ img });
     });
   }
 
