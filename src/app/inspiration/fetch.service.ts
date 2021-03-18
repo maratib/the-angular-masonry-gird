@@ -1,33 +1,49 @@
-import { ApiResponse } from './interfaces';
+import { RootObject, Bathroom, GridItem, Base } from './interfaces';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+// import { Observable, of } from 'rxjs';
+// import { catchError, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class FetchService {
-
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
-  jsonDataResult = [] as any;
+  jsonDataResult: RootObject | undefined;
+  bathroomImgItems: GridItem[] = [];
+  allImages: GridItem[] = [];
 
   constructor(private http: HttpClient) {
     this.http.get('assets/json/data.json').subscribe((res) => {
-        this.jsonDataResult = res;
-        console.log('--- result :: ',  this.jsonDataResult);
+      this.jsonDataResult = <RootObject>res;
+
+      this.jsonDataResult.bathroom.forEach((element) => {
+        this.allImages.push({ img: element.images[0] });
       });
 
-   }
-
-  getAll() {
-    return this.jsonDataResult;
-
+      this.loadImages(this.jsonDataResult.bathroom);
+      this.loadImages(this.jsonDataResult.bedroom);
+      this.loadImages(this.jsonDataResult.kitchen);
+      this.loadImages(this.jsonDataResult.living);
+    });
   }
+
+  private loadImages(cat: Base[]) {
+    cat.forEach((element: Base) => {
+      this.allImages.push({ img: element.images[0] });
+    });
+  }
+
+  getImages() {
+    return this.allImages;
+  }
+
+  // getAll() {
+  //   return this.jsonDataResult;
+  // }
 
   //  public getAll(): Observable<ApiResponse[]> {
   //   return this.http.get<ApiResponse[]>('https://gateway.ketu.homes-test.com/inspiration?categories=bedroom,kitchen,living,bathroom&page=1&city=&suburbs=')

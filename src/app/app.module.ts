@@ -18,15 +18,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MasonryGridComponent } from './inspiration/masonry-grid/masonry-grid.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-
-
+import { MyDirectivesModule } from './directives/my-directives.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MasonryGridComponent,
-    HomePageComponent
-  ],
+  declarations: [AppComponent, MasonryGridComponent, HomePageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -39,9 +34,10 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     LayoutModule,
     MatButtonModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MyDirectivesModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

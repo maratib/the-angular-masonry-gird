@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/maratib/iwork/learn/angular/my-masonry/src/polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! /Users/maratib/iwork/upwork/HomesNZ/the-angular-masonry-gird/src/polyfills.ts */"hN/g");
 
 
 /***/ }),
