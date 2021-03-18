@@ -416,7 +416,9 @@ class FetchService {
     }
     loadImages(cat) {
         cat.forEach((element) => {
-            this.allImages.push({ img: element.images[0] });
+            this.allImages.push({
+                img: 'https://imageserver.homes.co.nz/fill/300/200/' + element.images[0],
+            });
         });
     }
     getImages() {
