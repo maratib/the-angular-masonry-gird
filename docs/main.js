@@ -234,6 +234,7 @@ function MasonryGridComponent_div_3_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const item_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("prepend", true);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", item_r1.img, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 } }
@@ -242,6 +243,10 @@ class MasonryGridComponent {
         this.fetch = fetch;
         // masonryItems: any[] = [];
         this.gridItems = [];
+        this.masonryOptions = {
+            gutter: 20,
+            resize: true,
+        };
         // for (let index = 0; index < 100; index++) {
         //   const element = {
         //     img:
@@ -253,7 +258,7 @@ class MasonryGridComponent {
         this.gridItems = this.fetch.getImages();
     }
     refreshLayout(event) {
-        this.masonry.reloadItems();
+        // this.masonry.reloadItems();
         this.masonry.layout();
     }
 }
@@ -263,18 +268,20 @@ MasonryGridComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.masonry = _t.first);
-    } }, decls: 4, vars: 1, consts: [[3, "layoutComplete"], ["ngxMasonryItem", "", "class", "masonry-item", 4, "ngFor", "ngForOf"], ["ngxMasonryItem", "", 1, "masonry-item"], ["masonryLazy", "", "loading", "lazy", 3, "src"]], template: function MasonryGridComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 4, vars: 3, consts: [[2, "width", "90vw", 3, "options", "ordered", "layoutComplete"], ["ngxMasonryItem", "", "class", "masonry-item", 3, "prepend", 4, "ngFor", "ngForOf"], ["ngxMasonryItem", "", 1, "masonry-item", 3, "prepend"], ["masonryLazy", "", "loading", "lazy", 3, "src"]], template: function MasonryGridComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h1");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Masnory Grid Layout");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "ngx-masonry", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("layoutComplete", function MasonryGridComponent_Template_ngx_masonry_layoutComplete_2_listener($event) { return ctx.refreshLayout($event); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, MasonryGridComponent_div_3_Template, 2, 1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, MasonryGridComponent_div_3_Template, 2, 2, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("options", ctx.masonryOptions)("ordered", true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.gridItems);
-    } }, directives: [ngx_masonry__WEBPACK_IMPORTED_MODULE_1__["NgxMasonryComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], ngx_masonry__WEBPACK_IMPORTED_MODULE_1__["NgxMasonryDirective"], _directives_broken_image_directive__WEBPACK_IMPORTED_MODULE_4__["BrokenImageDirective"], _directives_lazy_img_directive__WEBPACK_IMPORTED_MODULE_5__["LazyImgDirective"]], styles: [".masonry-item[_ngcontent-%COMP%] {\n  margin-right: 8px;\n  margin-bottom: 4px;\n}\n.masonry-item[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 275px;\n  height: auto;\n  border-radius: 10px;\n}\n@media only screen and (max-width: 500px) {\n  .masonry-item[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n    margin: 4px !important;\n    width: 100%;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1hc29ucnktZ3JpZC5jb21wb25lbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUVFLGlCQUFBO0VBQ0Esa0JBQUE7QUFBRjtBQUhBO0VBTUksWUFBQTtFQUVBLFlBQUE7RUFDQSxtQkFBQTtBQURKO0FBS0E7RUFDRTtJQUVJLHNCQUFBO0lBQ0EsV0FBQTtFQUpKO0FBQ0YiLCJmaWxlIjoibWFzb25yeS1ncmlkLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hc29ucnktaXRlbSB7XG4gIC8vIG1pbi1oZWlnaHQ6IDIwNXB4O1xuICBtYXJnaW4tcmlnaHQ6IDhweDtcbiAgbWFyZ2luLWJvdHRvbTogNHB4O1xuXG4gIGltZyB7XG4gICAgd2lkdGg6IDI3NXB4O1xuICAgIC8vIGhlaWdodDogMjAwcHg7XG4gICAgaGVpZ2h0OiBhdXRvO1xuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gIH1cbn1cblxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA1MDBweCkge1xuICAubWFzb25yeS1pdGVtIHtcbiAgICBpbWcge1xuICAgICAgbWFyZ2luOiA0cHggIWltcG9ydGFudDtcbiAgICAgIHdpZHRoOiAxMDAlO1xuICAgIH1cbiAgfVxufVxuIl19 */"] });
+    } }, directives: [ngx_masonry__WEBPACK_IMPORTED_MODULE_1__["NgxMasonryComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], ngx_masonry__WEBPACK_IMPORTED_MODULE_1__["NgxMasonryDirective"], _directives_broken_image_directive__WEBPACK_IMPORTED_MODULE_4__["BrokenImageDirective"], _directives_lazy_img_directive__WEBPACK_IMPORTED_MODULE_5__["LazyImgDirective"]], styles: [".masonry-item[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n}\n.masonry-item[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  display: block;\n  min-width: 270px;\n  border-radius: 10px;\n}\n@media only screen and (max-width: 500px) {\n  .masonry-item[_ngcontent-%COMP%] {\n    margin: 10px auto !important;\n  }\n  .masonry-item[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n    display: block;\n    width: 100% !important;\n    height: auto !important;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1hc29ucnktZ3JpZC5jb21wb25lbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUdFLG1CQUFBO0FBREY7QUFGQTtFQVNJLGNBQUE7RUFDQSxnQkFBQTtFQUdBLG1CQUFBO0FBTko7QUFVQTtFQUNFO0lBQ0UsNEJBQUE7RUFSRjtFQU9BO0lBR0ksY0FBQTtJQUNBLHNCQUFBO0lBQ0EsdUJBQUE7RUFQSjtBQUNGIiwiZmlsZSI6Im1hc29ucnktZ3JpZC5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYXNvbnJ5LWl0ZW0ge1xuICAvLyBtaW4taGVpZ2h0OiAyMDVweDtcbiAgLy8gbWFyZ2luLXJpZ2h0OiA4cHg7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG5cbiAgaW1nIHtcbiAgICAvLyBtYXgtd2lkdGg6IDI3NXB4O1xuICAgIC8vIGhlaWdodDogMjAwcHg7XG4gICAgLy8gaGVpZ2h0OiBhdXRvO1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIG1pbi13aWR0aDogMjcwcHg7XG4gICAgLy8gd2lkdGg6IGF1dG87XG4gICAgLy8gaGVpZ2h0OiBhdXRvO1xuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gIH1cbn1cblxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA1MDBweCkge1xuICAubWFzb25yeS1pdGVtIHtcbiAgICBtYXJnaW46IDEwcHggYXV0byAhaW1wb3J0YW50O1xuICAgIGltZyB7XG4gICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgIHdpZHRoOiAxMDAlICFpbXBvcnRhbnQ7XG4gICAgICBoZWlnaHQ6IGF1dG8gIWltcG9ydGFudDtcbiAgICB9XG4gIH1cbn1cbiJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MasonryGridComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -421,13 +428,19 @@ class FetchService {
         this.allImages = [];
         this.http.get('assets/json/data.json').subscribe((res) => {
             this.jsonDataResult = res;
-            this.jsonDataResult.bathroom.forEach((element) => {
-                this.allImages.push({ img: element.images[0] });
-            });
-            this.loadImages(this.jsonDataResult.bathroom);
-            this.loadImages(this.jsonDataResult.bedroom);
-            this.loadImages(this.jsonDataResult.kitchen);
-            this.loadImages(this.jsonDataResult.living);
+            // this.jsonDataResult.bathroom.forEach((element) => {
+            //   this.allImages.push({ img: element.images[0] });
+            // });
+            // this.loadImages(this.jsonDataResult.bathroom);
+            // this.loadImages(this.jsonDataResult.bedroom);
+            // this.loadImages(this.jsonDataResult.kitchen);
+            // this.loadImages(this.jsonDataResult.living);
+            for (let index = 1; index < 58; index++) {
+                // const img = 'http://gallery.tst/' + index + '.png';
+                const img = 'https://json.softsons.com/gallery/' + index + '.png';
+                console.log(img);
+                this.allImages.push({ img });
+            }
         });
     }
     loadImages(cat) {

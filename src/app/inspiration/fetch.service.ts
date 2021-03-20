@@ -20,14 +20,22 @@ export class FetchService {
     this.http.get('assets/json/data.json').subscribe((res) => {
       this.jsonDataResult = <RootObject>res;
 
-      this.jsonDataResult.bathroom.forEach((element) => {
-        this.allImages.push({ img: element.images[0] });
-      });
+      // this.jsonDataResult.bathroom.forEach((element) => {
+      //   this.allImages.push({ img: element.images[0] });
+      // });
 
-      this.loadImages(this.jsonDataResult.bathroom);
-      this.loadImages(this.jsonDataResult.bedroom);
-      this.loadImages(this.jsonDataResult.kitchen);
-      this.loadImages(this.jsonDataResult.living);
+      // this.loadImages(this.jsonDataResult.bathroom);
+      // this.loadImages(this.jsonDataResult.bedroom);
+      // this.loadImages(this.jsonDataResult.kitchen);
+      // this.loadImages(this.jsonDataResult.living);
+
+      for (let index = 1; index < 58; index++) {
+        // const img = 'http://gallery.tst/' + index + '.png';
+        const img = 'https://json.softsons.com/gallery/' + index + '.png';
+        console.log(img);
+
+        this.allImages.push({ img });
+      }
     });
   }
 

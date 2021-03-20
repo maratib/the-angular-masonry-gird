@@ -1,21 +1,27 @@
 .masonry-item {
   // min-height: 205px;
-  margin-right: 8px;
-  margin-bottom: 4px;
+  // margin-right: 8px;
+  margin-bottom: 20px;
 
   img {
-    width: 275px;
+    // max-width: 275px;
     // height: 200px;
-    height: auto;
+    // height: auto;
+    display: block;
+    min-width: 270px;
+    // width: auto;
+    // height: auto;
     border-radius: 10px;
   }
 }
 
 @media only screen and (max-width: 500px) {
   .masonry-item {
+    margin: 10px auto !important;
     img {
-      margin: 4px !important;
-      width: 100%;
+      display: block;
+      width: 100% !important;
+      height: auto !important;
     }
   }
 }
