@@ -2,6 +2,7 @@ import { GridItem } from './../interfaces';
 import { FetchService } from './../fetch.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
+import { animate, style } from '@angular/animations';
 
 @Component({
   selector: 'app-masonry-grid',
@@ -24,6 +25,20 @@ export class MasonryGridComponent implements OnInit {
 
   public masonryOptions: NgxMasonryOptions = {
     gutter: 20,
+    percentPosition: true,
+    columnWidth: 275,
+
+    animations: {
+      show: [
+        style({ opacity: 0 }),
+        animate('400ms ease-in', style({ opacity: 1 })),
+      ],
+      hide: [
+        style({ opacity: '*' }),
+        animate('400ms ease-in', style({ opacity: 0 })),
+      ],
+    },
+
     // resize: true,
   };
 
