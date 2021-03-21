@@ -21,7 +21,11 @@ export class FetchService {
       this.jsonDataResult = <RootObject>res;
 
       // this.jsonDataResult.bathroom.forEach((element) => {
-      //   this.allImages.push({ img: element.images[0] });
+      //   const img =
+      //     'https://imageserver.homes.co.nz/scale/350/0/' + element.images[0];
+      //   console.log(img);
+
+      //   this.allImages.push({ img });
       // });
 
       // this.loadImages(this.jsonDataResult.bathroom);
@@ -42,7 +46,9 @@ export class FetchService {
   private loadImages(cat: Base[]) {
     cat.forEach((element: Base) => {
       const img =
-        'https://imageserver.homes.co.nz/scale/350/0/' + element.images[0];
+        'https://imageserver.homes.co.nz/fill/275/180/' + element.images[0];
+      // const img = element.images[0];
+
       console.log(img);
 
       this.allImages.push({ img });

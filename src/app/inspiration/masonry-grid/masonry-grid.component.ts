@@ -24,7 +24,7 @@ export class MasonryGridComponent implements OnInit {
 
   public masonryOptions: NgxMasonryOptions = {
     gutter: 20,
-    resize: true,
+    // resize: true,
   };
 
   ngOnInit(): void {
@@ -33,6 +33,6 @@ export class MasonryGridComponent implements OnInit {
 
   refreshLayout(event: any) {
     // this.masonry.reloadItems();
-    this.masonry.layout();
+    if (this.masonry) this.masonry.layout();
   }
 }

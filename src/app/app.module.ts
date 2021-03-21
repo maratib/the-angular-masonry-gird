@@ -19,9 +19,17 @@ import { MatListModule } from '@angular/material/list';
 import { MasonryGridComponent } from './inspiration/masonry-grid/masonry-grid.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MyDirectivesModule } from './directives/my-directives.module';
+import { SecondPageComponent } from './pages/second-page/second-page.component';
+import { NgMasnoryGridComponent } from './inspiration/ng-masnory-grid/ng-masnory-grid.component';
 
 @NgModule({
-  declarations: [AppComponent, MasonryGridComponent, HomePageComponent],
+  declarations: [
+    AppComponent,
+    MasonryGridComponent,
+    HomePageComponent,
+    SecondPageComponent,
+    NgMasnoryGridComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
